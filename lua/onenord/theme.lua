@@ -644,24 +644,6 @@ function theme.highlights(colors, config)
       CmpItemKindTypeParameter = { fg = colors.yellow },
       CmpItemKindCopilot = { fg = colors.green },
 
-      -- Notify
-      NotifyBackground = { fg = colors.fg, bg = colors.bg },
-      NotifyERRORBorder = { fg = colors.error },
-      NotifyWARNBorder = { fg = colors.warn },
-      NotifyINFOBorder = { fg = colors.info },
-      NotifyDEBUGBorder = { fg = colors.light_gray },
-      NotifyTRACEBorder = { fg = colors.hint },
-      NotifyERRORIcon = { fg = colors.error },
-      NotifyWARNIcon = { fg = colors.warn },
-      NotifyINFOIcon = { fg = colors.info },
-      NotifyDEBUGIcon = { fg = colors.light_gray },
-      NotifyTRACEIcon = { fg = colors.hint },
-      NotifyERRORTitle = { fg = colors.error },
-      NotifyWARNTitle = { fg = colors.warn },
-      NotifyINFOTitle = { fg = colors.info },
-      NotifyDEBUGTitle = { fg = colors.light_gray },
-      NotifyTRACETitle = { fg = colors.hint },
-
       -- Trouble
       TroubleCount = { fg = colors.purple },
       TroubleNormal = { fg = colors.fg },
@@ -677,24 +659,6 @@ function theme.highlights(colors, config)
       diffLine = { fg = colors.light_gray },
       diffIndexLine = { fg = colors.purple },
 
-      -- Neogit
-      NeogitBranch = { fg = colors.purple },
-      NeogitRemote = { fg = colors.orange },
-      NeogitHunkHeader = { fg = colors.fg, bg = colors.highlight },
-      NeogitHunkHeaderHighlight = { fg = colors.yellow, bg = colors.highlight },
-      NeogitDiffContextHighlight = { bg = colors.active },
-      NeogitDiffDeleteHighlight = { fg = colors.diff_remove, bg = colors.diff_remove_bg },
-      NeogitDiffAddHighlight = { fg = colors.diff_add, bg = colors.diff_add_bg },
-
-      NeogitNotificationInfo = { fg = colors.info },
-      NeogitNotificationWarning = { fg = colors.warn },
-      NeogitNotificationError = { fg = colors.error },
-
-      -- GitGutter
-      GitGutterAdd = { fg = colors.diff_add }, -- diff mode: Added line |diff.txt|
-      GitGutterChange = { fg = colors.diff_change }, -- diff mode: Changed line |diff.txt|
-      GitGutterDelete = { fg = colors.diff_remove }, -- diff mode: Deleted line |diff.txt|
-
       -- GitSigns
       GitSignsAdd = { fg = colors.diff_add }, -- diff mode: Added line |diff.txt|
       GitSignsAddNr = { fg = colors.diff_add }, -- diff mode: Added line |diff.txt|
@@ -707,259 +671,22 @@ function theme.highlights(colors, config)
       GitSignsDeleteLn = { fg = colors.diff_remove }, -- diff mode: Deleted line |diff.txt|
 
       -- Telescope
-      TelescopeNormal = { fg = colors.fg, bg = colors.bg },
-      TelescopePromptPrefix = { fg = colors.purple },
-      TelescopePromptBorder = { fg = colors.blue },
-      TelescopeResultsBorder = { fg = colors.blue },
-      TelescopePreviewBorder = { fg = colors.blue },
-      TelescopeSelectionCaret = { fg = colors.cyan },
-      TelescopeSelection = { fg = colors.cyan },
-      TelescopeMatching = { fg = colors.yellow, style = "bold" },
-
-      -- NvimTree
-      NvimTreeSymlink = { fg = colors.cyan, style = "bold" },
-      NvimTreeRootFolder = { fg = colors.green, style = "bold" },
-      NvimTreeFolderName = { fg = colors.blue },
-      NvimTreeFolderIcon = { fg = colors.dark_blue },
-      NvimTreeEmptyFolderName = { fg = colors.light_gray },
-      NvimTreeOpenedFolderName = { fg = colors.yellow, style = "italic" },
-      NvimTreeIndentMarker = { fg = colors.blue },
-      NvimTreeGitDirty = { fg = colors.yellow },
-      NvimTreeGitNew = { fg = colors.diff_add },
-      NvimTreeGitStaged = { fg = colors.purple },
-      NvimTreeGitDeleted = { fg = colors.diff_remove },
-      NvimTreeExecFile = { fg = colors.green, style = "bold" },
-      NvimTreeOpenedFile = { fg = colors.none },
-      NvimTreeSpecialFile = { fg = colors.orange, style = "underline" },
-      NvimTreeImageFile = { fg = colors.purple, style = "bold" },
-      NvimTreeNormal = { fg = colors.fg, bg = colors.active },
-      NvimTreeCursorLine = { link = "Visual" },
-      NvimTreeVertSplit = { fg = colors.active, bg = colors.active },
-      LspDiagnosticsError = { fg = colors.error },
-      LspDiagnosticsWarning = { fg = colors.warn },
-      LspDiagnosticsInformation = { fg = colors.info },
-      LspDiagnosticsHint = { fg = colors.hint },
-
-      -- NeoTree
-      NeoTreeDirectoryIcon = { fg = colors.dark_blue },
-      NeoTreeDirectoryName = { fg = colors.blue },
-      NeoTreeDirectoryNameOpened = { fg = colors.yellow, style = "italic" },
-      NeoTreeRootName = { fg = colors.green, style = "bold" },
-      NeoTreeFileName = { fg = colors.none },
-      NeoTreeFileIcon = { fg = colors.blue, style = "bold" },
-      NeoTreeFileNameOpened = { fg = colors.none },
-      NeoTreeIndentMarker = { fg = colors.blue },
-      NeoTreeGitAdded = { fg = colors.purple },
-      NeoTreeGitConflict = { fg = colors.red },
-      NeoTreeGitModified = { fg = colors.yellow },
-      NeoTreeGitUntracked = { fg = colors.green },
-      NeoTreeNormal = { fg = colors.fg, bg = colors.active },
-      NeoTreeNormalNC = { fg = colors.fg, bg = colors.active },
-      NeoTreeSymbolicLinkTarget = { fg = colors.cyan, style = "bold" },
-      NeoTreeCursorLine = { link = "Visual" },
-      NeoTreeTabActive = { fg = colors.fg, bg = colors.active, style = "bold" },
-      NeoTreeTabInactive = { fg = colors.light_gray, bg = colors.bg },
-      NeoTreeTabSeparatorActive = { fg = colors.yellow, bg = colors.active },
-      NeoTreeTabSeparatorInactive = { fg = colors.bg, bg = colors.bg },
-
-      -- WhichKey
-      WhichKey = { fg = colors.purple, style = "bold" },
-      WhichKeyGroup = { fg = colors.cyan },
-      WhichKeyDesc = { fg = colors.blue, style = "italic" },
-      WhichKeySeperator = { fg = colors.green },
-      WhichKeyFloat = { bg = colors.active },
-
-      -- LspSaga
-      TitleString = { fg = colors.fg },
-      TitleIcon = { fg = colors.red },
-      SagaBorder = { bg = colors.bg, fg = colors.blue },
-      SagaNormal = { bg = colors.bg },
-      SagaExpand = { fg = colors.dark_blue },
-      SagaCollapse = { fg = colors.dark_blue },
-      SagaBeacon = { bg = colors.purple },
-      ActionPreviewNormal = { link = "SagaNormal" },
-      ActionPreviewBorder = { link = "SagaBorder" },
-      ActionPreviewTitle = { fg = colors.yellow, bg = colors.bg },
-      CodeActionNormal = { link = "SagaNormal" },
-      CodeActionBorder = { link = "SagaBorder" },
-      CodeActionText = { fg = colors.orange },
-      CodeActionNumber = { fg = colors.green },
-      FinderSelection = { fg = colors.cyan, style = "bold" },
-      FinderFileName = { fg = colors.fg_light },
-      FinderCount = { link = "Label" },
-      FinderIcon = { fg = colors.cyan },
-      FinderType = { fg = colors.yellow },
-      FinderSpinnerTitle = { fg = colors.purple, style = "bold" },
-      FinderSpinner = { fg = colors.purple, style = "bold" },
-      FinderPreviewSearch = { link = "Search" },
-      FinderVirtText = { fg = colors.dark_blue },
-      FinderNormal = { link = "SagaNormal" },
-      FinderBorder = { link = "SagaBorder" },
-      FinderPreviewBorder = { link = "SagaBorder" },
-      DefinitionBorder = { link = "SagaBorder" },
-      DefinitionNormal = { link = "SagaNormal" },
-      DefinitionSearch = { link = "Search" },
-      HoverNormal = { link = "SagaNormal" },
-      HoverBorder = { link = "SagaBorder" },
-      RenameBorder = { link = "SagaBorder" },
-      RenameNormal = { fg = colors.orange, bg = colors.bg },
-      RenameMatch = { link = "Search" },
-      DiagnosticBorder = { link = "SagaBorder" },
-      DiagnosticSource = { fg = "gray" },
-      DiagnosticNormal = { link = "SagaNormal" },
-      DiagnosticErrorBorder = { link = "DiagnosticError" },
-      DiagnosticWarnBorder = { link = "DiagnosticWarn" },
-      DiagnosticHintBorder = { link = "DiagnosticHint" },
-      DiagnosticInfoBorder = { link = "DiagnosticInfo" },
-      DiagnosticPos = { fg = colors.light_gray },
-      DiagnosticWord = { fg = colors.fg },
-      CallHierarchyNormal = { link = "SagaNormal" },
-      CallHierarchyBorder = { link = "SagaBorder" },
-      CallHierarchyIcon = { fg = colors.purple },
-      CallHierarchyTitle = { fg = colors.red },
-      LspSagaLightBulb = { link = "DiagnosticSignHint" },
-      SagaShadow = { bg = colors.float },
-      OutlineIndent = { fg = colors.dark_blue },
-      OutlinePreviewBorder = { link = "SagaNormal" },
-      OutlinePreviewNormal = { link = "SagaBorder" },
-      TerminalBorder = { link = "SagaBorder" },
-      TerminalNormal = { link = "SagaNormal" },
-      LspSagaWinbarSep = { fg = colors.cyan },
-      LspSagaWinbarFile = { fg = colors.fg },
-      LspSagaWinbarWord = { fg = colors.fg_light },
-      LspSagaWinbarFolderName = { fg = colors.fg },
-
-      -- BufferLine
-      BufferLineIndicatorSelected = { fg = colors.yellow },
+      FzfLuaNormal = { fg = colors.fg, bg = colors.bg },
+      FzfLuaFzfPrompt = { fg = colors.purple },
+      FzfLuaBorder = { fg = colors.blue },
+      -- TelescopeResultsBorder = { fg = colors.blue },
+      -- TelescopePreviewBorder = { fg = colors.blue },
+      -- TelescopeSelectionCaret = { fg = colors.cyan },
+      -- TelescopeSelection = { fg = colors.cyan },
+      -- TelescopeMatching = { fg = colors.yellow, style = "bold" },
 
       -- nvim-treesitter-context
       TreesitterContext = { fg = colors.none, bg = colors.active },
 
-      -- barbar
-      BufferCurrent = { fg = colors.fg, bg = colors.bg },
-      BufferCurrentIndex = { fg = colors.fg, bg = colors.bg },
-      BufferCurrentMod = { fg = colors.yellow, bg = colors.bg, style = "bold" },
-      BufferCurrentSign = { fg = colors.cyan, bg = colors.bg },
-      BufferCurrentTarget = { fg = colors.red, bg = colors.bg, style = "bold" },
-      BufferVisible = { fg = colors.fg, bg = colors.bg },
-      BufferVisibleIndex = { fg = colors.fg, bg = colors.bg },
-      BufferVisibleMod = { fg = colors.yellow, bg = colors.bg, style = "bold" },
-      BufferVisibleSign = { fg = colors.light_gray, bg = colors.bg },
-      BufferVisibleTarget = { fg = colors.red, bg = colors.bg, style = "bold" },
-      BufferInactive = { fg = colors.light_gray, bg = colors.active },
-      BufferInactiveIndex = { fg = colors.light_gray, bg = colors.active },
-      BufferInactiveMod = { fg = colors.yellow, bg = colors.active },
-      BufferInactiveSign = { fg = colors.light_gray, bg = colors.active },
-      BufferInactiveTarget = { fg = colors.red, bg = colors.active, style = "bold" },
-
-      -- flash.nvim
-      FlashLabel = { bg = colors.light_red, fg = colors.active, bold = true },
-
-      -- Sneak
-      Sneak = { fg = colors.bg, bg = colors.fg },
-      SneakScope = { bg = colors.selection },
-
-      -- Indent Blankline
-      IndentBlanklineChar = { fg = colors.selection, style = "nocombine" },
-      IndentBlanklineSpaceChar = { fg = colors.gray, style = "nocombine" },
-      IndentBlanklineSpaceCharBlankline = { fg = colors.gray, style = "nocombine" },
-      IndentBlanklineContextChar = { fg = colors.purple, style = "nocombine" },
-      IndentBlanklineContextStart = { style = "underline", sp = colors.purple },
-
-      -- Indent Blankline 3
-      IblIndent = { fg = colors.selection },
-      IblWhitespace = { fg = colors.gray },
-      IblScope = { fg = colors.purple },
-
       -- Nvim dap
       DapBreakpoint = { fg = colors.red },
       DapStopped = { fg = colors.green },
-
-      -- Illuminate
-      illuminatedWord = { bg = colors.highlight },
-      illuminatedCurWord = { bg = colors.highlight },
-
-      -- Hop
-      HopNextKey = { fg = colors.fg_light, style = "bold" },
-      HopNextKey1 = { fg = colors.cyan, style = "bold" },
-      HopNextKey2 = { fg = colors.purple },
-      HopUnmatched = { fg = colors.light_gray },
-
-      -- Fern
-      FernBranchText = { fg = colors.blue },
-
-      -- Lightspeed
-      LightspeedLabel = { fg = colors.pink, style = "bold,underline" },
-      LightspeedLabelOverlapped = { fg = colors.dark_pink, style = "underline" },
-      LightspeedLabelDistant = { fg = colors.cyan, style = "bold,underline" },
-      LightspeedLabelDistantOverlapped = { fg = colors.blue, style = "underline" },
-      LightspeedShortcut = { fg = "#E5E9F0", bg = colors.pink, style = "bold,underline" },
-      LightspeedMaskedChar = { fg = colors.light_purple },
-      LightspeedGreyWash = { fg = colors.gray },
-      LightspeedUnlabeledMatch = { fg = colors.fg_light, style = "bold" },
-      LightspeedOneCharMatch = { fg = colors.yellow, style = "bold,reverse" },
-
-      -- Navic
-      NavicIconsFile = { bg = colors.active, fg = colors.blue },
-      NavicIconsModule = { bg = colors.active, fg = colors.blue },
-      NavicIconsNamespace = { bg = colors.active, fg = colors.yellow },
-      NavicIconsPackage = { bg = colors.active, fg = colors.orange },
-      NavicIconsClass = { bg = colors.active, fg = colors.yellow },
-      NavicIconsMethod = { bg = colors.active, fg = colors.purple },
-      NavicIconsProperty = { bg = colors.active, fg = colors.blue },
-      NavicIconsField = { bg = colors.active, fg = colors.blue },
-      NavicIconsConstructor = { bg = colors.active, fg = colors.yellow },
-      NavicIconsEnum = { bg = colors.active, fg = colors.yellow },
-      NavicIconsInterface = { bg = colors.active, fg = colors.yellow },
-      NavicIconsFunction = { bg = colors.active, fg = colors.purple },
-      NavicIconsVariable = { bg = colors.active, fg = colors.blue },
-      NavicIconsConstant = { bg = colors.active, fg = colors.orange },
-      NavicIconsString = { bg = colors.active, fg = colors.green },
-      NavicIconsNumber = { bg = colors.active, fg = colors.orange },
-      NavicIconsBoolean = { bg = colors.active, fg = colors.orange },
-      NavicIconsArray = { bg = colors.active, fg = colors.yellow },
-      NavicIconsObject = { bg = colors.active, fg = colors.orange },
-      NavicIconsKey = { bg = colors.active, fg = colors.purple },
-      NavicIconsNull = { bg = colors.active, fg = colors.red },
-      NavicIconsEnumMember = { bg = colors.active, fg = colors.cyan },
-      NavicIconsStruct = { bg = colors.active, fg = colors.yellow },
-      NavicIconsEvent = { bg = colors.active, fg = colors.purple },
-      NavicIconsOperator = { bg = colors.active, fg = colors.purple },
-      NavicIconsTypeParameter = { bg = colors.active, fg = colors.yellow },
-      NavicText = { bg = colors.active, fg = colors.fg },
-      NavicSeparator = { bg = colors.active, fg = colors.cyan },
-
-      -- nvim-ts-rainbow
-      rainbowcol1 = { fg = colors.red },
-      rainbowcol2 = { fg = colors.orange },
-      rainbowcol3 = { fg = colors.yellow },
-      rainbowcol4 = { fg = colors.green },
-      rainbowcol5 = { fg = colors.cyan },
-      rainbowcol6 = { fg = colors.blue },
-      rainbowcol7 = { fg = colors.purple },
     }
-
-    -- Options:
-
-    -- Make telescope look a bit better with alternate non-current background
-    if config.fade_nc then
-      plugins.TelescopePromptBorder["bg"] = colors.bg
-      plugins.TelescopeResultsBorder["bg"] = colors.bg
-      plugins.TelescopePreviewBorder["bg"] = colors.bg
-    end
-
-    -- Disable nvim-tree background
-    if config.disable.background then
-      remove_background(plugins.NvimTreeNormal)
-      remove_background(plugins.NeoTreeNormal)
-      remove_background(plugins.NeoTreeNormalNC)
-    end
-
-    -- Set transparent float backgrounds
-    if config.disable.float_background then
-      remove_background(plugins.TelescopeNormal)
-      remove_background(plugins.WhichKeyFloat)
-    end
 
     return plugins
   end
