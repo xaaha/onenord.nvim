@@ -617,32 +617,86 @@ function theme.highlights(colors, config)
     -- Plugins highlight groups
 
     local plugins = {
-      -- Cmp
-      CmpItemAbbr = { fg = colors.fg },
-      CmpItemAbbrDeprecated = { fg = colors.fg },
-      CmpItemAbbrMatch = { fg = colors.blue, style = "bold" },
-      CmpItemAbbrMatchFuzzy = { fg = colors.blue, underline = true },
-      CmpItemMenu = { fg = colors.light_gray },
+      -- Blink completion highlights
+      BlinkCmpMenu = { fg = colors.fg, bg = colors.float }, -- completion menu window
+      BlinkCmpMenuBorder = { fg = colors.gray, bg = colors.float }, -- completion menu window border
+      BlinkCmpMenuSelection = { fg = colors.bg, bg = colors.cyan, bold = true }, -- selected item
+      BlinkCmpScrollBarThumb = { fg = colors.gray, bg = colors.bg }, -- scrollbar thumb
+      BlinkCmpScrollBarGutter = { fg = colors.bg, bg = colors.gray }, -- scrollbar gutter
+      BlinkCmpLabel = { fg = colors.fg, bg = colors.float }, -- label
+      BlinkCmpLabelDeprecated = { fg = colors.light_gray, bg = colors.float, italic = true }, -- deprecated label
+      BlinkCmpLabelMatch = { fg = colors.purple, bg = colors.float, bold = true }, -- matches query
+      BlinkCmpLabelDetail = { fg = colors.blue, bg = colors.float }, -- label description
+      BlinkCmpLabelDescription = { fg = colors.cyan, bg = colors.float }, -- label description
+      BlinkCmpKind = { fg = colors.orange, bg = colors.float }, -- kind icon/text
+      -- For BlinkCmpKind<kind>, you can specialize if needed, e.g.
+      BlinkCmpKindFunction = { fg = colors.blue, bg = colors.float },
+      BlinkCmpKindVariable = { fg = colors.yellow, bg = colors.float },
+      BlinkCmpKindClass = { fg = colors.purple, bg = colors.float },
+      BlinkCmpKindInterface = { fg = colors.cyan, bg = colors.float },
+      BlinkCmpKindEnum = { fg = colors.orange, bg = colors.float },
+      -- Add more BlinkCmpKind<kind> as needed...
+      BlinkCmpSource = { fg = colors.light_green, bg = colors.float }, -- source of item
+      BlinkCmpGhostText = { fg = colors.gray, bg = colors.bg, italic = true }, -- ghost text preview
+      BlinkCmpDoc = { fg = colors.fg, bg = colors.float }, -- documentation window
+      BlinkCmpDocBorder = { fg = colors.gray, bg = colors.float }, -- documentation window border
+      BlinkCmpDocSeparator = { fg = colors.light_gray, bg = colors.float }, -- doc/detail separator
+      BlinkCmpDocCursorLine = { fg = colors.bg, bg = colors.selection }, -- doc window cursor line
+      BlinkCmpSignatureHelp = { fg = colors.fg, bg = colors.float }, -- signature help window
+      BlinkCmpSignatureHelpBorder = { fg = colors.gray, bg = colors.float }, -- signature help border
+      BlinkCmpSignatureHelpActiveParameter = { fg = colors.red, bg = colors.float, bold = true }, -- active parameter
 
-      CmpItemKindText = { fg = colors.orange },
-      CmpItemKindMethod = { fg = colors.blue },
-      CmpItemKindFunction = { fg = colors.blue },
-      CmpItemKindConstructor = { fg = colors.yellow },
-      CmpItemKindField = { fg = colors.blue },
-      CmpItemKindClass = { fg = colors.yellow },
-      CmpItemKindInterface = { fg = colors.yellow },
-      CmpItemKindModule = { fg = colors.blue },
-      CmpItemKindProperty = { fg = colors.blue },
-      CmpItemKindValue = { fg = colors.orange },
-      CmpItemKindEnum = { fg = colors.yellow },
-      CmpItemKindKeyword = { fg = colors.purple },
-      CmpItemKindSnippet = { fg = colors.green },
-      CmpItemKindFile = { fg = colors.blue },
-      CmpItemKindEnumMember = { fg = colors.cyan },
-      CmpItemKindConstant = { fg = colors.orange },
-      CmpItemKindStruct = { fg = colors.yellow },
-      CmpItemKindTypeParameter = { fg = colors.yellow },
-      CmpItemKindCopilot = { fg = colors.green },
+      -- Fzf highlights
+      FzfLuaNormal = { fg = colors.fg, bg = colors.bg },
+      FzfLuaBorder = { fg = colors.gray, bg = colors.bg },
+      FzfLuaTitle = { fg = colors.cyan, bg = colors.bg, bold = true },
+      FzfLuaTitleFlags = { fg = colors.orange, bg = colors.bg, bold = true },
+      FzfLuaBackdrop = { bg = "#000000" },
+      FzfLuaHelpNormal = { fg = colors.fg, bg = colors.bg },
+      FzfLuaHelpBorder = { fg = colors.gray, bg = colors.bg },
+      FzfLuaPreviewNormal = { fg = colors.fg, bg = colors.bg },
+      FzfLuaPreviewBorder = { fg = colors.gray, bg = colors.bg },
+      FzfLuaPreviewTitle = { fg = colors.light_green, bg = colors.bg, bold = true },
+      FzfLuaCursor = { fg = colors.bg, bg = colors.cyan },
+      FzfLuaCursorLine = { bg = colors.selection },
+      FzfLuaCursorLineNr = { fg = colors.yellow, bg = colors.selection },
+      FzfLuaSearch = { fg = colors.bg, bg = colors.yellow, bold = true },
+      FzfLuaScrollBorderEmpty = { fg = colors.gray },
+      FzfLuaScrollBorderFull = { fg = colors.gray },
+      FzfLuaScrollFloatEmpty = { bg = colors.gray },
+      FzfLuaScrollFloatFull = { bg = colors.light_gray },
+      FzfLuaDirIcon = { fg = colors.blue },
+      FzfLuaDirPart = { fg = colors.gray },
+      FzfLuaFilePart = { fg = colors.fg },
+      FzfLuaHeaderBind = { fg = colors.green, bold = true },
+      FzfLuaHeaderText = { fg = colors.red, bold = true },
+      FzfLuaPathColNr = { fg = colors.blue },
+      FzfLuaPathLineNr = { fg = colors.light_green },
+      FzfLuaLivePrompt = { fg = colors.pink, bold = true },
+      FzfLuaLiveSym = { fg = colors.pink, bold = true },
+      FzfLuaBufId = { fg = colors.bg, bg = colors.blue },
+      FzfLuaBufName = { fg = colors.blue },
+      FzfLuaBufLineNr = { fg = colors.light_gray },
+      FzfLuaBufNr = { fg = colors.cyan },
+      FzfLuaBufFlagCur = { fg = colors.orange },
+      FzfLuaBufFlagAlt = { fg = colors.blue },
+      FzfLuaTabTitle = { fg = colors.blue, bold = true },
+      FzfLuaTabMarker = { fg = colors.green, bold = true },
+      -- Fzf terminal highlight groups
+      FzfLuaFzfNormal = { fg = colors.fg, bg = colors.bg },
+      FzfLuaFzfCursorLine = { bg = colors.selection },
+      FzfLuaFzfMatch = { fg = colors.purple, bold = true },
+      FzfLuaFzfBorder = { fg = colors.gray, bg = colors.bg },
+      FzfLuaFzfScrollbar = { fg = colors.gray },
+      FzfLuaFzfSeparator = { fg = colors.gray },
+      FzfLuaFzfGutter = { fg = colors.bg },
+      FzfLuaFzfHeader = { fg = colors.cyan, bold = true },
+      FzfLuaFzfInfo = { fg = colors.gray },
+      FzfLuaFzfPointer = { fg = colors.pink, bold = true },
+      FzfLuaFzfMarker = { fg = colors.pink },
+      FzfLuaFzfSpinner = { fg = colors.pink },
+      FzfLuaFzfPrompt = { fg = colors.orange, bold = true },
+      FzfLuaFzfQuery = { fg = colors.fg, bg = colors.bg },
 
       -- Trouble
       TroubleCount = { fg = colors.purple },
@@ -669,16 +723,6 @@ function theme.highlights(colors, config)
       GitSignsDelete = { fg = colors.diff_remove }, -- diff mode: Deleted line |diff.txt|
       GitSignsDeleteNr = { fg = colors.diff_remove }, -- diff mode: Deleted line |diff.txt|
       GitSignsDeleteLn = { fg = colors.diff_remove }, -- diff mode: Deleted line |diff.txt|
-
-      -- Telescope
-      FzfLuaNormal = { fg = colors.fg, bg = colors.bg },
-      FzfLuaFzfPrompt = { fg = colors.purple },
-      FzfLuaBorder = { fg = colors.blue },
-      -- TelescopeResultsBorder = { fg = colors.blue },
-      -- TelescopePreviewBorder = { fg = colors.blue },
-      -- TelescopeSelectionCaret = { fg = colors.cyan },
-      -- TelescopeSelection = { fg = colors.cyan },
-      -- TelescopeMatching = { fg = colors.yellow, style = "bold" },
 
       -- nvim-treesitter-context
       TreesitterContext = { fg = colors.none, bg = colors.active },
