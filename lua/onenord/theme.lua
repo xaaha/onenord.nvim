@@ -210,7 +210,7 @@ function theme.highlights(colors, config)
       -- |spell| Combined with the highlighting used otherwise.
       SpellRare = { fg = colors.none, bg = colors.none, style = "italic,undercurl", sp = colors.purple },
       -- status line of current window
-      StatusLine = { fg = colors.fg, bg = colors.active },
+      StatusLine = { fg = colors.fg, bg = colors.active, bold = true },
       -- status lines of not-current windows Note: if this is equal to "StatusLine"
       -- Vim will use "^^^" in the status line of the current window.
       StatusLineNC = { fg = colors.light_gray, bg = colors.active },
@@ -731,8 +731,7 @@ function theme.highlights(colors, config)
       DapBreakpoint = { fg = colors.red },
       DapStopped = { fg = colors.green },
 
-      -- local plugions of xaaha/dev-env/
-      StatusLine = { fg = colors.fg, bg = colors.active, bold = true }, -- Main statusline, clear foreground, active bar background
+      -- local plugins of xaaha/dev-env/
       GitBranch = { fg = colors.cyan, bg = colors.none, italic = true }, -- Branch info, cyan for git, no background, italic for emphasis
       GitChanges = { fg = colors.yellow, bg = colors.none, bold = true }, -- Git changes, yellow for visibility, no background, bold for emphasis
     }
