@@ -730,6 +730,11 @@ function theme.highlights(colors, config)
       -- Nvim dap
       DapBreakpoint = { fg = colors.red },
       DapStopped = { fg = colors.green },
+
+      -- local plugions of xaaha/dev-env/
+      StatusLine = { fg = colors.fg, bg = colors.active, bold = true }, -- Main statusline, clear foreground, active bar background
+      GitBranch = { fg = colors.cyan, bg = colors.none, italic = true }, -- Branch info, cyan for git, no background, italic for emphasis
+      GitChanges = { fg = colors.yellow, bg = colors.none, bold = true }, -- Git changes, yellow for visibility, no background, bold for emphasis
     }
 
     return plugins
