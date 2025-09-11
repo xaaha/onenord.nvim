@@ -210,7 +210,7 @@ function theme.highlights(colors, config)
       -- |spell| Combined with the highlighting used otherwise.
       SpellRare = { fg = colors.none, bg = colors.none, style = "italic,undercurl", sp = colors.purple },
       -- status line of current window
-      StatusLine = { fg = colors.fg, bg = colors.active, bold = true },
+      StatusLine = { fg = colors.fg, bg = colors.active },
       -- status lines of not-current windows Note: if this is equal to "StatusLine"
       -- Vim will use "^^^" in the status line of the current window.
       StatusLineNC = { fg = colors.light_gray, bg = colors.active },
